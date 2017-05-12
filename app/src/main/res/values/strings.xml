@@ -21,7 +21,7 @@
         completions."
     </string>
     <string name="title_activity_bottom_navi">BottomNaviActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">主页</string>
+    <string name="title_dashboard">影评</string>
+    <string name="title_notifications">通知</string>
 </resources>
