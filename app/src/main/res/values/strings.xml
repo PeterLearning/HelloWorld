@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">豆瓣电影</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">其他</string>
+    <string name="title_activity_login">欢迎来到豆瓣</string>
+    <string name="title_activity_setting">设置</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">电子邮箱</string>
+    <string name="prompt_password">密码</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_sign_in_short">登录</string>
+    <string name="error_invalid_email">请输入有效的邮箱</string>
+    <string name="error_invalid_password">您设置的密码过短</string>
+    <string name="error_incorrect_password">密码输入错误</string>
+    <string name="error_field_required">此项不可为空</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_bottom_navi">BottomNaviActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
