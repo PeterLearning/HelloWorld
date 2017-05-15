@@ -30,6 +30,11 @@
         <activity
             android:name=".SettingActivity"
             android:label="@string/title_activity_setting" />
+        <activity
+            android:name=".LocationActivity"
+            android:label="选择城市" />
+        <activity android:name=".CinemaActivity"
+            android:label="选择影院"></activity>
     </application>
 
 </manifest>

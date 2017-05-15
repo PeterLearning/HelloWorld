@@ -1,5 +1,6 @@
 package com.example.peter.helloworld.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,9 +9,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.peter.helloworld.CinemaActivity;
+import com.example.peter.helloworld.LoginActivity;
 import com.example.peter.helloworld.Movies;
 import com.example.peter.helloworld.R;
 
@@ -38,6 +43,7 @@ public class HomeFragment extends Fragment {
 
     private List<Movies> moviesList = new ArrayList<>();
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -50,6 +56,19 @@ public class HomeFragment extends Fragment {
         return contentView;
     }
 
+//    @Override
+//    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+//        super.onActivityCreated(savedInstanceState);
+//        Button homeButton = (Button) getActivity().findViewById(R.id.home_button);
+//        homeButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(getActivity(), "hello", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//    }
+
     private class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder> {
 
         private List<Movies> mMoviesList;
@@ -60,6 +79,8 @@ public class HomeFragment extends Fragment {
             TextView  moviesDir;
             TextView  moviesStar;
             TextView  moviesCat;
+            Button    homeButton;
+            View  moviesView;
 
             public ViewHolder (View view) {
                 super(view);
@@ -68,6 +89,8 @@ public class HomeFragment extends Fragment {
                 moviesDir  = (TextView)  view.findViewById(R.id.dir);
                 moviesStar  = (TextView)  view.findViewById(R.id.star);
                 moviesCat  = (TextView)  view.findViewById(R.id.cat);
+                homeButton = (Button)  view.findViewById(R.id.home_button);
+                moviesView = view;
             }
          }
 
@@ -79,7 +102,19 @@ public class HomeFragment extends Fragment {
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.movies_item, parent, false);
-            ViewHolder holder = new ViewHolder(view);
+            final ViewHolder holder = new ViewHolder(view);
+
+            holder.homeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //int position = holder.getAdapterPosition();
+                    //Movies movies = mMoviesList.get(position);
+//                    Toast.makeText(v.getContext(), "you click the button",
+//                            Toast.LENGTH_LONG).show();
+                    Intent homeIntent = new Intent(getActivity(), CinemaActivity.class);
+                    startActivity(homeIntent);
+                }
+            });
             return holder;
         }
 
@@ -102,7 +137,7 @@ public class HomeFragment extends Fragment {
     private void initMovies() {
         for (int i = 0; i < 12; i++) {
             Movies a = new Movies("摔跤吧！爸爸","尼特什·提瓦瑞","阿米尔·汗,萨卡诗·泰瓦,法缇玛·萨那·纱卡",
-                    "喜剧,动作,家庭",R.drawable.a);
+            "喜剧,动作,家庭",R.drawable.a);
             moviesList.add(a);
         }
     }

@@ -1,6 +1,7 @@
 package com.example.peter.helloworld;
 
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity
 
 //    private TextView mTextMessage;
     BottomNavigationView navigation;
+//    Button homeButton;
+
 
     public void replaceFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction().replace(R.id.container,
@@ -71,6 +74,9 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+  //        homeButton = (Button) findViewById(R.id.home_button);
+ //         homeButton.setOnClickListener(this);
+
  //       mTextMessage = (TextView) findViewById(R.id.message);
         navigation = (BottomNavigationView) findViewById(R.id.navigation);  //add
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -85,6 +91,8 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
+                Intent locationIntent = new Intent(MainActivity.this, LocationActivity.class);
+                startActivity(locationIntent);
             }
         });
 
@@ -101,7 +109,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
- //           case R.id.icon_button:
+//            case R.id.home_button:
 //                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
 //                startActivity(intent);
 //                break;
