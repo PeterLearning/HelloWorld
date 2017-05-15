@@ -30,8 +30,6 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private RecyclerView recyclerView;
-
     public HomeFragment() {
         super();
     }
@@ -40,6 +38,8 @@ public class HomeFragment extends Fragment {
         HomeFragment fragment = new HomeFragment();
         return fragment;
     }
+
+    private RecyclerView recyclerView;
 
     private List<Movies> moviesList = new ArrayList<>();
 
@@ -135,10 +135,24 @@ public class HomeFragment extends Fragment {
     }
 
     private void initMovies() {
-        for (int i = 0; i < 12; i++) {
-            Movies a = new Movies("摔跤吧！爸爸","尼特什·提瓦瑞","阿米尔·汗,萨卡诗·泰瓦,法缇玛·萨那·纱卡",
-            "喜剧,动作,家庭",R.drawable.a);
+        Movies a = new Movies("摔跤吧！爸爸","尼特什·提瓦瑞","阿米尔·汗,萨卡诗·泰瓦,法缇玛·萨那·纱卡",
+         "喜剧,动作,家庭",R.drawable.a);
+        Movies b = new Movies("银河护卫队2","詹姆斯·古恩","克里斯·帕拉特,佐伊·索尔达娜,戴夫·巴蒂斯塔",
+                "动作,冒险,科幻",R.drawable.b);
+        Movies c = new Movies("加勒比海盗5：死无对证","乔阿吉姆·罗恩尼,艾斯彭·山德伯格","约翰尼·德普,奥兰多·布鲁姆,杰弗里·拉什",
+                "喜剧,动作,奇幻",R.drawable.c);
+        Movies d = new Movies("亚瑟王：斗兽争霸","盖·里奇","查理·汉纳姆,裘德·洛,艾瑞克·巴纳",
+                "动作,冒险,奇幻",R.drawable.d);
+        Movies e = new Movies("超凡战队","迪恩·以色列特","戴克·蒙哥马利,娜奥米·斯科特,林路迪",
+                "动作,冒险,科幻",R.drawable.e);
+        Movies f = new Movies("异星觉醒","丹尼尔·伊斯皮诺萨","\"杰克·吉伦哈尔,丽贝卡·弗格森,瑞安·雷诺兹",
+                "恐怖,惊悚,科幻",R.drawable.f);
             moviesList.add(a);
-        }
+            moviesList.add(b);
+            moviesList.add(c);
+            moviesList.add(d);
+            moviesList.add(e);
+            moviesList.add(f);
+
     }
 }
